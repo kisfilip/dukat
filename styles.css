@@ -1,0 +1,304 @@
+@font-face {
+    font-family: "fontor";
+    src: url(src/KozGo.woff);
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	font-family: 'Raleway', sans-serif;
+}
+
+/*html {
+  font-size: 70%;
+}*/
+
+body {
+	overflow-x: hidden;
+}
+
+
+.navigation {
+    position: absolute;
+    z-index: 2;
+    margin-left: 1.25rem;
+    margin-top: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+.navigation ul {
+    padding: 0;
+  }
+
+.navigation ul li {
+  display: inline;
+}
+
+
+.navigation ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  margin-left: 4px;
+  margin-right: 4px;
+  font-size: 1.375rem;
+  transition: 0.9s ease;
+  opacity: 0.5;
+}
+
+.navigation ul li a:hover{
+  border-bottom: 1px solid;
+  opacity: 1;
+}
+
+.linkSpan{
+  color: #fff;
+  display: inline-block;
+  margin: 0.25rem;
+  font-size: 1.375rem;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  top: 1.75rem;
+  right: 1.25rem;
+  position: fixed;
+  z-index: 2;
+  float: right;
+  opacity: 0.5;
+  transition: 0.1s ease;
+}
+
+.button:hover{
+  opacity: 1;
+}
+
+.section {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 2rem;
+}
+
+.section h1 {
+    font-size: 5rem;
+    font-weight: 200;
+    font-stretch: semi-expanded;
+    color: #ffffff;
+}
+
+.section h2 {
+    font-size: 3rem;
+}
+
+.section-wrapper{
+    width: 100%;
+    max-width: 50rem;
+    padding: 1rem 5rem;
+}
+
+.landing {
+  background-image: url(images/zito1.jpg);
+  background-size: cover;
+}
+
+.landing .section-wrapper {
+  z-index: 2;
+  margin: auto;
+}
+
+.logoDukat {
+  width: 100%;
+  max-width: 20rem;
+}
+
+.sectionKontakt {
+  background-color: #ADDCC9;
+  background-image: url('images/appleArt.png');
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 50vw;
+	color: #333;
+}
+
+.textLrg p {
+  text-align: center;
+  font-size: 3.5rem;
+	font-weight: 300;
+  margin: 0 0 2.5rem;
+}
+
+.whiteBg {
+	background-color: #fff;
+	opacity: 0.8;
+  padding: 0;
+}
+
+.lineUnder:after {
+	margin: 2rem auto 0;
+	width: 15%;
+	content: "";
+	display: block;
+	border: 1px solid #333;
+}
+
+.sectionKontakt p:last-child {
+  margin: 0;
+}
+
+.sectionOnama {
+  background-image: url("images/kofi.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+  color: #333;
+}
+
+.sectionPic1 {
+	background-color: #9cd6d7;
+	background-image: url("images/chefHat.png");
+	background-size: 10%;
+	background-position: 50% 30%;
+}
+
+.sectionJelovnik {
+  background-color: #9cd6d7;
+	width: 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionJelovnik h1 {
+	color: #222;
+}
+
+ .sectionMeni {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500rem;
+  max-height: 500rem;
+  background: #acbb8a;
+}
+
+.jelovnikWrap {
+	background-color: #fff;
+	padding: 0;
+	max-width: 67.5rem;
+  position: relative;
+  margin: 0 0 9rem;
+}
+
+.jelovnikWrap h1, .jelovnikWrap h2, .jelovnikWrap p {
+  transform:scale(1,1.2);
+  -webkit-transform:scale(1,1.2);
+	font-weight: lighter;
+}
+
+.jelovnikWrap h2, .jelovnikWrap p {
+  text-align: left;
+	padding-left: 14.5rem;
+	transform:scale(1,1);
+	-webkit-transform:scale(1,1);
+}
+
+.jelovnikWrap h1 {
+	font-size: 4.5rem;
+	margin: 7.5rem 0;
+}
+
+.jelovnikWrap p {
+	line-height: 2.4rem;
+	margin-bottom: 3rem;
+}
+
+.prilog {
+	font-size: 1.7rem;
+	margin-bottom: 1.2rem;
+	display: inline-block;
+}
+
+.line {
+	content: "";
+	display: block;
+	border-top: 1px solid #c1ba81;
+	position: relative;
+	top: -0.5rem;
+	margin-bottom: 2rem;
+}
+
+.sectionMeni-wrapper{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 70%;
+  max-width: 80rem;
+  height: 98%;
+  max-height: 2500rem;
+  min-width: 5rem;
+  background: #fff;
+}
+
+.spanMenu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 53.5rem;
+  width: 7.2rem;
+  height: 100%;
+  background-image: url(images/menuSide.jpg);
+  background-repeat: repeat-y;
+  z-index: 1;
+}
+
+.side {
+  display: inline-block;
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+  transform: rotate(90deg);
+  position: absolute;
+  right: -1rem;
+  /*left: 67.5rem;*/
+  top: 33.5rem;
+  color: white;
+  transition: 0.8s;
+  transition-timing-function: cubic-bezier(.86,.19,.24,.92);
+  transform-origin: right;
+}
+
+.side h2 {
+  font-size: 2rem;
+}
+
+.sectionFooter {
+  background-image: url("images/viski.jpg");
+  background-size: cover;
+}
