@@ -1,6 +1,14 @@
+window.onload = function() {
 // trigger on scroll event
+
+// naslov fadein
+var naslov = document.getElementsByClassName("mainHeader")[0];
+var logo = document.getElementsByClassName("logoDukat")[0];
+var nav = document.getElementsByClassName("navigation")[0];
+var btn = document.getElementsByClassName("button")[0];
+var landing = document.getElementsByClassName("landing")[0];
+
 window.onscroll = function () {
-  // get scrollbar position
   var doc = document.documentElement, body = document.body;
   var top = (doc && doc.scrollTop  || body && body.scrollTop  || 0);
 
@@ -8,6 +16,7 @@ window.onscroll = function () {
   var menu = document.getElementsByClassName("sectionPic1")[0];
   var Onama = document.getElementsByClassName("sectionOnama")[0];
   var sectionJelovnik = document.getElementsByClassName("sectionJelovnik")[0];
+  // get scrollbar position
   // if scrollbar past menu height: set position to fixed,
   if (top > (Onama.offsetHeight + Onama.offsetTop)) {
     sectionJelovnik.style.marginTop = "100vh";
@@ -22,20 +31,38 @@ window.onscroll = function () {
      menu.style.position = "static";
      sectionJelovnik.style.marginTop = "0";
   }
-  var sectionJelovnik = document.getElementsByClassName("sectionJelovnik")[0];
-  var jelovnikWrap = document.getElementsByClassName("jelovnikWrap")[0];
-  var podnaslov = document.getElementsByClassName("side")[0];
-  var line = document.getElementsByClassName("line")[0];
-  var line2 = document.getElementsByClassName("line")[1];
-  var offsetNaslova = (top - sectionJelovnik.offsetTop)/16;
-  var jelovnikScroll = top - sectionJelovnik.offsetTop;
-  if (jelovnikScroll > line.offsetTop && jelovnikScroll < line2.offsetTop) {
-    console.log("true");
-    console.log(podnaslov.style.top);
-    console.log(line.offsetTop);
-    podnaslov.style.top = (jelovnikScroll)/16 + 8 + "rem";
-  } else if (jelovnikScroll < line.offsetTop){
-       console.log("false");
-       podnaslov.style.top = line.offsetTop/16 + "rem";
-     };
-};
+}
+
+//   if (top > 90) {
+//     naslov.classList.add("invisible");
+//   }
+//     else {
+//     naslov.classList.remove("invisible");
+//     };
+// }
+//
+// setTimeout(function () {
+//     naslov.classList.remove("invisible");
+//   }, 250);
+
+setTimeout(function () {
+    landing.classList.remove("invisible");
+    setTimeout(function () {
+      logo.classList.remove("invisible");
+
+    }, 300);
+
+    setTimeout(function () {
+      nav.classList.remove("invisible");
+      btn.classList.remove("invisible");
+    }, 750);
+  }, 250);
+
+}
+
+
+function modalToggle() {
+  var modal = document.getElementsByClassName("modalMenu")[0];
+  modal.classList.toggle("hidden");
+  modal.classList.toggle("invisible");
+}

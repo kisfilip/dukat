@@ -4,30 +4,43 @@
     <meta charset="utf-8">
     <title>Kafana Dukat</title>
     <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
   <body>
     <main class="site">
-      <nav class="navigation">
+      <section class="modalMenu invisible hidden invisibleBg">
+        <div class="modalBg">
+          <div class="section-wrapper modalWrap">
+            <ul>
+              <li>Na početak</li>
+              <li>O nama</li>
+              <li>Ponuda</li>
+              <li>Jelovnik</li>
+              <li>Dešavanja</li>
+              <li>Kontakt</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <nav class="navigation invisible">
         <ul>
-          <li><a href="#">O Nama</a></li><span class="linkSpan">|</span>
-          <li><a href="#">Ponuda</a></li><span class="linkSpan">|</span>
-          <li><a href="#">Desavanja</a></li><span class="linkSpan">|</span>
-          <li><a href="#">Kontakt</a></li><span class="linkSpan">|</span>
+          <li><a href="#onama">O Nama</a></li><span class="linkSpan">|</span>
+          <li><a href="#ponuda">Ponuda</a></li><span class="linkSpan">|</span>
+          <li><a href="#jelovnik">Jelovnik</a></li><span class="linkSpan">|</span>
+          <li><a href="#desavanja">Desavanja</a></li><span class="linkSpan">|</span>
+          <li><a href="#kontakt">Kontakt</a></li><span class="linkSpan"></span>
         </ul>
       </nav>
-    <input class="button" type="image" src="images/symbolMenu.png" name="" value="">
+    <input class="button invisible" type="image" src="images/menu1w.svg" onclick=modalToggle()>
     <!-- heroStart -->
-    <section class="section landing">
+    <section class="landing invisible invisibleBg">
       <div class="section-wrapper">
-        <h1>
-        <img class="logoDukat"src="images/dukatLogo2.png" alt="logo">
-      </h1>
-
-
+        <img class="logoDukat invisible"src="images/dukatLogo3.svg" alt="logo">
+        <!-- <h1 class="mainHeader invisible">Dobrodošli</h1> -->
       </div>
     </section>
     <!-- contactStart -->
-    <section class="section sectionKontakt">
+    <section class="section sectionKontakt" id="onama">
       <div class="section-wrapper textLrg">
         <p class="lineUnder">
           Domaći specijaliteti sa notom Bunjevaca
@@ -39,7 +52,7 @@
       </div>
     </section>
     <!-- oNamaStart -->
-    <section class="section sectionOnama ">
+    <section class="section sectionOnama" id="ponuda">
       <div class="section-wrapper textLrg whiteBg">
         <p class="lineUnder">
           Dukat
@@ -61,19 +74,10 @@
       </div>
     </section>
     <!-- jelovnikStart -->
-    <section class="section sectionJelovnik">
+    <section class="section sectionJelovnik" id="jelovnik">
         <div class="section-wrapper jelovnikWrap">
         <h1 class="lineUnder">JELOVNIK</h1>
           <p>
-            <div class="side">
-              <h2>SENDVIČI</h2>
-            </div>
-            <div class="side">
-              <h2>PREDJELA</h2>
-            </div>
-            <div class="side">
-              <h2>SUPE I ČORBE</h2>
-            </div>
             <h2>SENDVIČI</h2>
             <span class="line"></span>
             <p> 1.	Tost sa šunkom i sirom<br><span class="prilog">(tost, maslac, šunka, trapist, salata)</span><br>
@@ -218,7 +222,7 @@
       </div>
     </section> -->
     <!-- footerStart -->
-    <section class="section sectionFooter">
+    <section class="section sectionFooter" id="kontakt">
       <div class="section-wrapper">
         <p>
           Mi smo mala kafana u usponu trala la la la hshshshshhshshshshshshshs
