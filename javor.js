@@ -31,19 +31,39 @@ window.onscroll = function () {
      menu.style.position = "static";
      sectionJelovnik.style.marginTop = "0";
   }
+
+function getCoords(elem) { // crossbrowser version
+  var box = elem.getBoundingClientRect();
+
+  var body = document.body;
+  var docEl = document.documentElement;
+
+  var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
+  var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
+
+  var clientTop = docEl.clientTop || body.clientTop || 0;
+  var clientLeft = docEl.clientLeft || body.clientLeft || 0;
+
+  var top  = box.top +  scrollTop - clientTop;
+  var left = box.left + scrollLeft - clientLeft;
+
+  return { top: Math.round(top), left: Math.round(left) };
+  }
+
+let fadeInElements = document.getElementsByClassName("fadeInvisible");
+
+for (let i = 0; i < fadeInElements.length; i++) {
+  if ((getCoords(fadeInElements[i]).top - (window.innerHeight/1.1)) < top) {
+    fadeInElements[i].classList.remove("fadeInvisible")
+  } else {
+    fadeInElements[i].classList.add("fadeInvisible")
+  }
 }
 
-//   if (top > 90) {
-//     naslov.classList.add("invisible");
-//   }
-//     else {
-//     naslov.classList.remove("invisible");
-//     };
-// }
-//
-// setTimeout(function () {
-//     naslov.classList.remove("invisible");
-//   }, 250);
+
+
+
+}
 
 setTimeout(function () {
     landing.classList.remove("invisible");
@@ -57,7 +77,6 @@ setTimeout(function () {
       btn.classList.remove("invisible");
     }, 750);
   }, 250);
-
 }
 
 
