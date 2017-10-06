@@ -307,18 +307,36 @@ div.modalWrap {
 }
 
 .sectionOnama {
-  background-image: url("images/kofi.jpg");
-	background-size: cover;
-	background-attachment: fixed;
   color: #333;
 	box-shadow: inset 0 0 10px 10px rgba(0, 0, 0, 0.3);
+	z-index: 0;
+	overflow: hidden;
+}
+
+.oNamaBg {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-image: url("images/kofi.jpg");
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
 }
 
 .sectionPic1 {
+	z-index: 0;
+	height: 80vh;
 	background-color: #9cd6d7;
+}
+
+.chefHatBg {
+	position: absolute;
+	width: 10rem;
+	height: 10rem;
 	background-image: url("images/chefHat.png");
-	background-size: 10%;
-	background-position: 50% 30%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	transform: translateY(-10rem);
 }
 
 .sectionJelovnik {

@@ -8,6 +8,8 @@ var nav = document.getElementsByClassName("navigation")[0];
 var btn = document.getElementsByClassName("button")[0];
 var landing = document.getElementsByClassName("landing")[0];
 
+let oNamaBg = document.getElementsByClassName("oNamaBg")[0];
+
 let fadeInElements = document.getElementsByClassName("fade");
 
 let landingPics = document.getElementsByClassName("landingPic");
@@ -23,19 +25,19 @@ window.onscroll = function () {
   var sectionJelovnik = document.getElementsByClassName("sectionJelovnik")[0];
   // get scrollbar position
   // if scrollbar past menu height: set position to fixed,
-  if (top > (Onama.offsetHeight + Onama.offsetTop)) {
-    sectionJelovnik.style.marginTop = "100vh";
-     menu.style.position = "fixed";
-     menu.style.top = "0";
-     menu.style.right = "0";
-     menu.style.bottom = "0";
-     menu.style.left = "0";
-  }
-  // set position to absolute
-  else {
-     menu.style.position = "static";
-     sectionJelovnik.style.marginTop = "0";
-  }
+  // if (top > (Onama.offsetHeight + Onama.offsetTop)) {
+  //   sectionJelovnik.style.marginTop = "70vh";
+  //    menu.style.position = "fixed";
+  //    menu.style.top = "0";
+  //    menu.style.right = "0";
+  //    menu.style.bottom = "0";
+  //    menu.style.left = "0";
+  // }
+  // // set position to absolute
+  // else {
+  //    menu.style.position = "static";
+  //    sectionJelovnik.style.marginTop = "0";
+  // }
 
 function getCoords(elem) { // crossbrowser version
   var box = elem.getBoundingClientRect();
@@ -68,24 +70,47 @@ for (let i = 0; i < fadeInElements.length; i++) {
 function landingScroll() {
   if (top > 0 && top < window.innerHeight) {
     landing.style.transform = "translateY(" + top/2.5 + "px)";
-    console.log("eto");
   }
 }
 
-landingScroll()
+landingScroll();
+
+let oNamaTop = getCoords(Onama).top;
+
+function oNamaScroll() {
+  if (top > oNamaTop) {
+    oNamaBg.style.transform = "translateY(" + ((top - oNamaTop)/2) + "px)";
+  } else {
+    oNamaBg.style.transform = "translateY(" + ((top - oNamaTop)/2) + "px)";
+  }
+
+}
+oNamaScroll();
+
+let jelovnikTop = getCoords(document.getElementsByClassName("sectionJelovnik")[0]).top;
+
+let sectionPic1Top = getCoords(menu).top;
+function chefSectionScroll() {
+  if (jelovnikTop - menu.offsetHeight < top) {
+    menu.style.transform = "translateY(" + (top - (jelovnikTop - menu.offsetHeight))/1.5 + "px)";
+  } else {
+    menu.style.transform = "translateY(" + 0 +"px)";
+  }
+}
+chefSectionScroll();
 }
 
 setTimeout(function () {
     landing.classList.remove("invisible");
-    setTimeout(function () {
-      logo.classList.remove("invisible");
+    // setTimeout(function () {
+    //   logo.classList.remove("invisible");
+    //
+    // }, 300);
 
-    }, 300);
-
-    setTimeout(function () {
-      nav.classList.remove("invisible");
-      btn.classList.remove("invisible");
-    }, 750);
+    // setTimeout(function () {
+    //   nav.classList.remove("invisible");
+    //   btn.classList.remove("invisible");
+    // }, 750);
   }, 1500);
 
 
