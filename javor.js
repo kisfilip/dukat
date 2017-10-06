@@ -8,7 +8,7 @@ var nav = document.getElementsByClassName("navigation")[0];
 var btn = document.getElementsByClassName("button")[0];
 var landing = document.getElementsByClassName("landing")[0];
 
-let fadeInElements = document.getElementsByClassName("fadeInvisible");
+let fadeInElements = document.getElementsByClassName("fade");
 
 let landingPics = document.getElementsByClassName("landingPic");
 let landingCounter = 0;
@@ -56,14 +56,23 @@ function getCoords(elem) { // crossbrowser version
 }
 
 
-
 for (let i = 0; i < fadeInElements.length; i++) {
-  if ((getCoords(fadeInElements[i]).top - (window.innerHeight/1.1)) < top) {
+  if ((getCoords(fadeInElements[i]).top - (window.innerHeight/1.1)) < top
+    &&(getCoords(fadeInElements[i]).top + (window.innerHeight/3)) > top) {
     fadeInElements[i].classList.remove("fadeInvisible")
   } else {
     fadeInElements[i].classList.add("fadeInvisible")
   }
 }
+
+function landingScroll() {
+  if (top > 0 && top < window.innerHeight) {
+    landing.style.transform = "translateY(" + top/2.5 + "px)";
+    console.log("eto");
+  }
+}
+
+landingScroll()
 }
 
 setTimeout(function () {
@@ -79,10 +88,12 @@ setTimeout(function () {
     }, 750);
   }, 1500);
 
+
+
 function slideShow() {
   landingPics[landingCounter].classList.add("landingInvisible");
   landingCounter++;
-  if (landingCounter == 5) {
+  if (landingCounter == landingPics.length) {
     landingPics[0].classList.remove("landingInvisible");
     setTimeout(function(){
     for (var i = 1; i < landingPics.length; i++) {
