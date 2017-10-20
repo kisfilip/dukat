@@ -18,6 +18,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 	font-family: 'Raleway', sans-serif;
+	cursor: default;
 }
 
 /*html {
@@ -31,9 +32,9 @@ body {
 
 /*modal*/
 
-/*section.hidden {
-  transform: translateY(100vh);
-}*/
+.hidden {
+  opacity: 0;
+}
 
 .modalMenu {
 	position: fixed;
@@ -47,9 +48,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-	transition: 0.5s ease;
-
-	display: none;
+	transition: 0.2s ease;
 }
 
 .modalBg {
@@ -74,11 +73,24 @@ div.modalWrap {
 
 .modalWrap li {
 	text-transform: uppercase;
+	transition: .2s ease;
+	opacity: 0.7;
+}
+
+.modalWrap li a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+.modalWrap li:hover {
+	opacity: 1;
+
 }
 
 .modalWrap li:after {
 	margin: 1rem auto;
-	width: 8%;
+	width: 2rem;
 	content: "";
 	display: block;
 	border: 1px solid #333;
@@ -90,12 +102,12 @@ div.modalWrap {
 
 .navigation {
     position: absolute;
-    z-index: 2;
-    margin-left: 1.25rem;
-    margin-top: 1.25rem;
+    z-index: 12;
+		left: 50%;
     display: flex;
     flex-wrap: wrap;
 		transition: 1.5s ease;
+		transform: translateX(-50%);
   }
 
 .navigation ul {
@@ -110,10 +122,7 @@ div.modalWrap {
 .navigation ul li a {
   text-decoration: none;
   color: #ffffff;
-  margin-left: 4px;
-  margin-right: 4px;
-  font-size: 1.375rem;
-  transition: 0.9s ease;
+  font-size: 2.375rem;
 }
 
 .navigation ul li a:hover{
@@ -135,13 +144,37 @@ div.modalWrap {
   right: 1.75rem;
   position: fixed;
   z-index: 11;
-  float: right;
-	opacity: 0.7;
-  transition: 1.5s ease;
+  transition: .5s ease;
+	padding: 0px;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0);
+	outline: none;
+	border: none;
+	cursor: pointer;
 }
 
-.button:hover{
-  opacity: 1;
+.button:hover {
+	transform-origin: center;
+	transform: scale(1.1, 1.1);
+}
+
+.button svg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.menuIcon {
+	transition: 0.5s ease;
+	fill: #EFE4C2;
+}
+
+.menuExit {
+	fill: #EFE4C2;
+	opacity: 0;
+	transition: 0.5s ease;
 }
 
 .section {
@@ -191,11 +224,7 @@ div.modalWrap {
   height: 100vh;
   position: relative;
   text-align: center;
-	background-color: #fff;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-	background-attachment: fixed;
+	background-color: #222;
 	display: flex;
 	align-items: center;
   justify-content: center;
@@ -261,24 +290,53 @@ div.modalWrap {
 .invisible {
 	opacity: 0;
 	transform: translateY(5%);
+	z-index: -10;
 }
 
 .invisibleBg {
 	transform: none;
 }
 
-.logoDukat {
-  width: 35vw;
-	transition: 1.5s ease;
+.slideshowContain {
+	transition: opacity 1.5s ease;
+	filter: sepia(0.8) brightness(0.5);
+}
+
+.landing h1 {
+	font-size: 5.5rem;
+	font-weight: bolder;
+	color: #EFE4C2;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
+	font-family: 'Amatic SC', cursive;
+	transition: opacity 1.5s ease;
+	letter-spacing: 0.4rem;
+}
+
+.naslovDukat {
+	transition: opacity 1.5s ease;
+	width: 50vh;
+	height: 60vh;
+	/*box-shadow: 0 0 100px 0 rgba(0, 0, 0, 0.3);*/
+	border-radius: 50%;
+	z-index: 10;
+}
+
+
+.logoHead.lineUnder:after {
+		margin: 0 auto;
+		width: 15%;
+		content: "";
+		display: block;
+		border: 1px solid #EFE4C2;
 }
 
 .sectionKontakt {
-  background-color: #ADDCC9;
+  background-color: #d7dcad;
   background-image: url('images/appleArt.png');
   background-position: bottom left;
   background-repeat: no-repeat;
   background-size: 50vw;
-	color: #333;
+	color: #634545;
 }
 
 .textLrg p {
@@ -290,11 +348,13 @@ div.modalWrap {
 
 .whiteBg {
 	background-color: rgba(0,0,0,0.3);
-	opacity: 0.8;
+	opacity: 1;
   padding: 0;
-	color: #fff;
-	box-shadow: 0 0 50px 50px rgba(0, 0, 0, 0.3);
+	color: #EFE4C2;
+	box-shadow: 0 0 250px 250px rgba(0, 0, 0, 0.3);
+	text-shadow: 0 0 5px rgba(0, 0, 0, 1);
 	border-radius: 50%;
+	z-index: 1;
 }
 
 .lineUnder:after {
@@ -302,11 +362,11 @@ div.modalWrap {
 	width: 15%;
 	content: "";
 	display: block;
-	border: 1px solid #333;
+	border: 0.0625rem solid #634545;
 }
 
 .whiteBg .lineUnder:after {
-	border: 1px solid #fff;
+	border: 0.0625rem solid #EFE4C2;
 }
 
 .sectionKontakt p:last-child {
@@ -333,7 +393,11 @@ div.modalWrap {
 .sectionPic1 {
 	z-index: 0;
 	height: 80vh;
-	background-color: #9cd6d7;
+	background-color: #803e3e;
+}
+
+.sectionPic1 p {
+	color: #EFE4C2;
 }
 
 .chefHatBg {
@@ -344,15 +408,17 @@ div.modalWrap {
 	background-repeat: no-repeat;
 	background-size: contain;
 	transform: translateY(-10rem);
+	filter: sepia(1);
 }
 
 .sectionJelovnik {
-  background-color: #9cd6d7;
+  background-color: #803e3e;
 	width: 100vw;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+	/*margin-bottom: 400px;*/
 }
 
 .sectionJelovnik h1 {
@@ -369,7 +435,7 @@ div.modalWrap {
 }
 
 .jelovnikWrap {
-	background-color: #fff;
+	background-color: #EFE4C2;
 	padding: 0;
 	max-width: 67.5rem;
   position: relative;
@@ -380,6 +446,7 @@ div.modalWrap {
   transform:scale(1,1.2);
   -webkit-transform:scale(1,1.2);
 	font-weight: lighter;
+	color: #634545;
 }
 
 .jelovnikWrap h2, .jelovnikWrap p {
@@ -408,7 +475,7 @@ div.modalWrap {
 .line {
 	content: "";
 	display: block;
-	border-top: 1px solid #c1ba81;
+	border-top: 0.0625rem solid #c1ba81;
 	position: relative;
 	top: -0.5rem;
 	margin-bottom: 2rem;
@@ -432,16 +499,134 @@ div.modalWrap {
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 53.5rem;
+  left: 6.8rem;
   width: 7.2rem;
   height: 100%;
   background-image: url(images/lineMain.jpg);
   background-repeat: repeat-y;
   z-index: 1;
-	box-shadow: inset 0 0 17px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 0 17px 0.0625rem rgba(0, 0, 0, 0.2);
 }
 
 .sectionFooter {
   background-image: url("images/viski.jpg");
   background-size: cover;
+	background-position: 0 90%;
+	height: 27rem;
+	z-index: -20;
+}
+
+.kontaktGroup {
+	text-align: left;
+	max-width: 67.5rem;
+	margin: 0 auto;
+}
+
+.kontaktGroup a {
+	display: inline-block;
+	margin: 5rem auto 1rem;
+}
+
+.kontaktGroup h3 {
+	font-size: 3rem;
+	margin: 1rem auto;
+	color: #EFE4C2;
+}
+
+.kontaktGroup img {
+	width: 5rem;
+	height: 5rem;
+	cursor: pointer;
+}
+
+/*responsive*/
+
+@media screen and (max-width: 1200px) and (min-width: 1001px) {
+	html {
+		font-size: 80%;
+	}
+}
+
+@media screen and (max-width: 1000px) and (min-width: 771px) {
+	html {
+		font-size: 70%;
+	}
+}
+
+@media screen and (max-width: 770px) and (min-width: 401px) {
+	html {
+		font-size: 60%;
+	}
+
+	.kontaktGroup {
+		max-width: 40rem;
+	}
+
+	.jelovnikWrap {
+		max-width: none;
+	}
+
+	.button {
+		height: 5rem;
+		width: 5rem;
+	}
+}
+
+@media screen and (max-width: 400px) and (min-width: 0px) {
+	html {
+		font-size: 40%;
+	}
+
+	.prilog {
+		font-size: 2.8rem;
+	}
+
+	.jelovnikWrap h2 {
+		font-size: 3.2rem;
+	}
+
+	.jelovnikWrap p {
+		font-size: 3.0rem;
+		line-height: 3.2rem;
+		padding-left: 8rem;
+	}
+
+	.jelovnikWrap {
+		max-width: auto;
+	}
+
+	.spanMenu {
+		right: none;
+		left: 0;
+	}
+
+	div.modalBg {
+		width: 80%;
+	}
+
+	div.modalWrap {
+		max-width: none;
+		width: auto;
+	}
+
+	.sectionPic1 p {
+		font-size: 3rem;
+	}
+
+	.chefHatBg {
+		transform: translateY(-15rem);
+	}
+
+	.kontaktGroup {
+		max-width: 40rem;
+	}
+
+	.kontaktGroup h3 {
+		text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+	}
+
+	.button {
+		height: 5rem;
+		width: 5rem;
+	}
 }

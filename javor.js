@@ -3,17 +3,22 @@ window.onload = function() {
 
 // naslov fadein
 var naslov = document.getElementsByClassName("mainHeader")[0];
-var logo = document.getElementsByClassName("logoDukat")[0];
+var logo = document.getElementsByClassName("naslovDukat")[0];
+let logoHead = document.getElementsByClassName("logoHead")[0];
 var nav = document.getElementsByClassName("navigation")[0];
 var btn = document.getElementsByClassName("button")[0];
 var landing = document.getElementsByClassName("landing")[0];
+let slideshowContain = document.getElementsByClassName("slideshowContain")[0];
+let modal = document.getElementsByClassName("modalMenu")[0];
 
 let oNamaBg = document.getElementsByClassName("oNamaBg")[0];
+
 
 let fadeInElements = document.getElementsByClassName("fade");
 
 let landingPics = document.getElementsByClassName("landingPic");
 let landingCounter = 0;
+
 
 window.onscroll = function () {
   var doc = document.documentElement, body = document.body;
@@ -21,11 +26,12 @@ window.onscroll = function () {
 
   // get menu
   var menu = document.getElementsByClassName("sectionPic1")[0];
-  var Onama = document.getElementsByClassName("sectionOnama")[0];
+  let kontakt = document.getElementsByClassName("sectionKontakt")[0];
+  var oNama = document.getElementsByClassName("sectionOnama")[0];
   var sectionJelovnik = document.getElementsByClassName("sectionJelovnik")[0];
   // get scrollbar position
   // if scrollbar past menu height: set position to fixed,
-  // if (top > (Onama.offsetHeight + Onama.offsetTop)) {
+  // if (top > (oNama.offsetHeight + oNama.offsetTop)) {
   //   sectionJelovnik.style.marginTop = "70vh";
   //    menu.style.position = "fixed";
   //    menu.style.top = "0";
@@ -75,7 +81,17 @@ function landingScroll() {
 
 landingScroll();
 
-let oNamaTop = getCoords(Onama).top;
+function logoScroll() {
+  if (top > 0) {
+    logo.style.transform = "translateY(" + top/9 + "px)";
+    logoHead.style.transform = "translateY(" + top/9 + "px)";
+  }
+}
+
+logoScroll();
+
+let oNamaTop = getCoords(oNama).top;
+let kontaktTop = getCoords(kontakt).top;
 
 function oNamaScroll() {
   if (top > oNamaTop) {
@@ -87,7 +103,22 @@ function oNamaScroll() {
 }
 oNamaScroll();
 
+let menuBtn = document.getElementsByClassName("menuIcon")[0];
 let jelovnikTop = getCoords(document.getElementsByClassName("sectionJelovnik")[0]).top;
+
+function menuColor() {
+  if (top > kontaktTop && top < oNamaTop || window.innerWidth < 830 && top > jelovnikTop) {
+    menuBtn.style.fill = "#634545"
+    console.log("eto");
+  }
+  else {
+    menuBtn.style.fill = "#EFE4C2"
+  }
+}
+
+menuColor();
+
+
 
 let sectionPic1Top = getCoords(menu).top;
 function chefSectionScroll() {
@@ -101,17 +132,23 @@ chefSectionScroll();
 }
 
 setTimeout(function () {
-    landing.classList.remove("invisible");
-    // setTimeout(function () {
-    //   logo.classList.remove("invisible");
-    //
-    // }, 300);
+    slideshowContain.classList.remove("invisible");
+  }, 1500);
 
     // setTimeout(function () {
     //   nav.classList.remove("invisible");
     //   btn.classList.remove("invisible");
     // }, 750);
-  }, 1500);
+
+
+setTimeout(function () {
+    logoHead.classList.remove("invisible");
+  }, 400)
+
+setTimeout(function () {
+    logo.classList.remove("invisible");
+    btn.classList.remove("invisible");
+  }, 800)
 
 
 
@@ -133,9 +170,36 @@ function slideShow() {
 setTimeout(slideShow, 5000);
 
 
-function modalToggle() {
-  var modal = document.getElementsByClassName("modalMenu")[0];
-  modal.classList.toggle("hidden");
+// function modalToggle() {
+//   var modal = document.getElementsByClassName("modalMenu")[0];
+//   modal.classList.toggle("hidden");
+//   modal.classList.toggle("invisible");
+// }
+}
+
+function modalShow() {
+  let menuBtn = document.getElementsByClassName("menuIcon")[0];
+  let menuExit = document.getElementsByClassName("menuExit")[0];
+  let modal = document.getElementsByClassName("modalMenu")[0];
+  let body = document.getElementsByTagName("body")[0];
+  modalCheck = modal.classList.contains("invisible");
+  function modalTimeout() {
+     modal.classList.toggle("invisible");
+     body.style.overflowY = "";
+}
+  if (modalCheck == false) {
+    modal.classList.toggle("hidden");
+    setTimeout(modalTimeout, 200);
+    menuBtn.style.opacity = "1";
+    menuExit.style.opacity = "0";
+  } else {
   modal.classList.toggle("invisible");
+  modal.classList.toggle("hidden");
+  body.style.overflowY = "hidden";
+  menuBtn.style.opacity = "0";
+  menuExit.style.opacity = "1";
 }
 }
+
+var scroll = new SmoothScroll('a[href*="#"]');
+console.log(scroll);

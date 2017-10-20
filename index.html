@@ -6,18 +6,19 @@
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
   <body>
     <main class="site">
       <section class="modalMenu invisible hidden invisibleBg">
         <div class="modalBg">
           <div class="section-wrapper modalWrap">
             <ul>
-              <li>Na početak</li>
-              <li>O nama</li>
-              <li>Ponuda</li>
-              <li>Jelovnik</li>
-              <li>Dešavanja</li>
-              <li>Kontakt</li>
+              <li><a href="#landing" onclick="modalShow()">Na početak</a></li>
+              <li><a href="#onama" onclick="modalShow()">O nama</a></li>
+              <li><a href="#ponuda" onclick="modalShow()">Ponuda</a></li>
+              <li><a href="#jelovnik" onclick="modalShow()">Jelovnik</a></li>
+              <li><a href="#" onclick="modalShow()">Dešavanja</a></li>
+              <li><a href="#kontakt" onclick="modalShow()">Kontakt</a></li>
             </ul>
           </div>
         </div>
@@ -31,18 +32,48 @@
           <li><a href="#kontakt">Kontakt</a></li><span class="linkSpan"></span>
         </ul>
       </nav> -->
-    <!-- <input class="button invisible" type="image" src="images/menu1w.svg" onclick=modalToggle()> -->
+    <button class="button invisible" type="image" src="images/menu.svg" onclick=modalShow()>
+      <svg class="menuIcon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      	 viewBox="0 0 56 56" style="enable-background:new 0 0 56 56;" xml:space="preserve">
+      <g>
+      	<path d="M28,0C12.561,0,0,12.561,0,28s12.561,28,28,28s28-12.561,28-28S43.439,0,28,0z M28,54C13.663,54,2,42.336,2,28
+      		S13.663,2,28,2s26,11.664,26,26S42.337,54,28,54z"/>
+      	<path d="M15,17h26c0.553,0,1-0.448,1-1s-0.447-1-1-1H15c-0.553,0-1,0.448-1,1S14.447,17,15,17z"/>
+      	<path d="M45,31H11c-0.553,0-1,0.448-1,1s0.447,1,1,1h34c0.553,0,1-0.448,1-1S45.553,31,45,31z"/>
+      	<path d="M45,23H11c-0.553,0-1,0.448-1,1s0.447,1,1,1h34c0.553,0,1-0.448,1-1S45.553,23,45,23z"/>
+      	<path d="M41,39H15c-0.553,0-1,0.448-1,1s0.447,1,1,1h26c0.553,0,1-0.448,1-1S41.553,39,41,39z"/>
+      </g>
+      </svg>
+
+      <svg class="menuExit" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      	 viewBox="0 0 56 56" style="enable-background:new 0 0 56 56;" xml:space="preserve">
+      <style type="text/css">
+      	.st0{fill:#EFE4C2;}
+      </style>
+      <path class="st0" d="M28,0C12.6,0,0,12.6,0,28s12.6,28,28,28s28-12.6,28-28S43.4,0,28,0z M28,54C13.7,54,2,42.3,2,28S13.7,2,28,2
+      	s26,11.7,26,26S42.3,54,28,54z"/>
+      <path class="st0" d="M39.3,15.3l-24,24c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1,0.4,1.4,0l24-24c0.4-0.4,0.4-1,0-1.4
+      	C40.3,14.9,39.7,14.9,39.3,15.3z"/>
+      <path class="st0" d="M40.7,39.3l-24-24c-0.4-0.4-1-0.4-1.4,0c-0.4,0.4-0.4,1,0,1.4l24,24c0.4,0.4,1,0.4,1.4,0
+      	C41.1,40.3,41.1,39.7,40.7,39.3z"/>
+      </svg>
+
+
+    </button>
     <!-- heroStart -->
-    <section class="landing invisible invisibleBg">
+    <section class="landing invisibleBg" id="landing">
       <div class="section-wrapper">
-        <!-- <img class="logoDukat invisible"src="images/dukatLogo3.svg" alt="logo"> -->
+        <h1 class="logoHead invisible lineUnder">Dobrodošli</h1>
+        <img class="naslovDukat invisible" src="images/dl2.svg" alt="dukat logo">
         <!-- <h1 class="mainHeader invisible">Dobrodošli</h1> -->
       </div>
-      <div class="landingPic1 landingPic"></div>
-      <div class="landingPic2 landingPic"></div>
-      <div class="landingPic3 landingPic"></div>
-      <!-- <div class="landingPic4 landingPic"></div>
-      <div class="landingPic5 landingPic"></div> -->
+      <div class="slideshowContain invisible">
+        <div class="landingPic1 landingPic"></div>
+        <div class="landingPic2 landingPic"></div>
+        <div class="landingPic3 landingPic"></div>
+        <!-- <div class="landingPic4 landingPic"></div>
+        <div class="landingPic5 landingPic"></div> -->
+      </div>
     </section>
     <!-- contactStart -->
     <section class="section sectionKontakt" id="onama">
@@ -52,7 +83,7 @@
         </p>
         <!-- <p>Logajzer</p> -->
         <p>
-          u dvorištu Bunjevačkog kola <br>Preradovićeva 4 <br>SUBOTICA<br> ~066 646 6446
+          u dvorištu Bunjevačkog kola <br>Preradovićeva 4 <br>SUBOTICA<br> ~~064 114 2091
         </p>
       </div>
     </section>
@@ -229,20 +260,18 @@
       </div>
     </section> -->
     <!-- footerStart -->
-    <section class="section sectionFooter" id="kontakt">
-      <div class="section-wrapper textLrg whiteBg">
-        <p>
-          Mi smo mala kafana u usponu trala la la la hshshshshhshshshshshshshs
-          imamo fine kafe, jela pica, dobru muziku tral la la la
-          organizujemo proslave, rodjendane, ruckove za razna desavaja,
-          iznajmljujemo prostor
-        </p>
+    <section class="sectionFooter" id="kontakt">
+      <div class="kontaktGroup">
+        <a href="https://sr-rs.facebook.com/kafana.dukat.5/" target="_blank"><img src="images/facebookLogo.svg" alt="facebook logo"></a>
+        <h3>eMail: 67andrija@gmail.com</h3>
+        <h3>~064 114 2091</h3>
       </div>
     </section>
 <footer>
 
 </footer>
 </main>
+<script src="smooth-scroll.js"></script>
 <script src="javor.js" charset="utf-8"></script>
   </body>
 </html>
