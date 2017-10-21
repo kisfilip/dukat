@@ -21,9 +21,9 @@ time, mark, audio, video {
 	cursor: default;
 }
 
-html {
-  width: 100vw;
-}
+/*html {
+  font-size: 70%;
+}*/
 
 body {
 	overflow-x: hidden;
@@ -49,26 +49,15 @@ body {
 	background-color: rgba(25, 25, 25, 0.9);
 	z-index: 10;
   text-align: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-	-webkit-transition: 0.2s ease;
 	transition: 0.2s ease;
 }
 
 .modalBg {
 	background-image: url("images/grozdjeSmall.jpg");
 	width: 24rem;
-	-webkit-background-size: cover;
 	background-size: cover;
 }
 
@@ -77,7 +66,6 @@ div.modalWrap {
 	max-width: 20rem;
 	padding: 5rem 2rem;
 	background-color: rgba(255, 255, 255, 0.75);
-	-webkit-background-size: cover;
 	background-size: cover;
 }
 
@@ -89,7 +77,6 @@ div.modalWrap {
 
 .modalWrap li {
 	text-transform: uppercase;
-	-webkit-transition: .2s ease;
 	transition: .2s ease;
 	opacity: 0.7;
 }
@@ -121,17 +108,9 @@ div.modalWrap {
     position: absolute;
     z-index: 12;
 		left: 50%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-		-webkit-transition: 1.5s ease;
 		transition: 1.5s ease;
-		-webkit-transform: translateX(-50%);
-		-ms-transform: translateX(-50%);
 		transform: translateX(-50%);
   }
 
@@ -169,7 +148,6 @@ div.modalWrap {
   right: 1.75rem;
   position: fixed;
   z-index: 11;
-  -webkit-transition: .5s ease;
   transition: .5s ease;
 	padding: 0px;
 	border-radius: 50%;
@@ -180,11 +158,7 @@ div.modalWrap {
 }
 
 .button:hover {
-	-webkit-transform-origin: center;
-	-ms-transform-origin: center;
 	transform-origin: center;
-	-webkit-transform: scale(1.1, 1.1);
-	-ms-transform: scale(1.1, 1.1);
 	transform: scale(1.1, 1.1);
 }
 
@@ -197,7 +171,6 @@ div.modalWrap {
 }
 
 .menuIcon {
-	-webkit-transition: 0.5s ease;
 	transition: 0.5s ease;
 	fill: #EFE4C2;
 }
@@ -205,7 +178,6 @@ div.modalWrap {
 .menuExit {
 	fill: #EFE4C2;
 	opacity: 0;
-	-webkit-transition: 0.5s ease;
 	transition: 0.5s ease;
 }
 
@@ -214,20 +186,10 @@ div.modalWrap {
   height: 100vh;
   position: relative;
   text-align: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   background-color: #fff;
-  -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -249,7 +211,6 @@ div.modalWrap {
     width: 100%;
     max-width: 50rem;
     padding: 1rem 5rem;
-		-webkit-transition: 1s;
 		transition: 1s;
 }
 
@@ -259,8 +220,6 @@ div.modalWrap {
 
 .section-wrapper.fadeInvisible {
 	opacity: 0;
-	-webkit-transform: translateY(100px);
-	-ms-transform: translateY(100px);
 	transform: translateY(100px);
 }
 
@@ -270,20 +229,10 @@ div.modalWrap {
   position: relative;
   text-align: center;
 	background-color: #222;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
 	align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
   font-size: 2rem;
-	-webkit-transition: opacity 1.5s ease;
 	transition: opacity 1.5s ease;
 }
 
@@ -308,10 +257,8 @@ div.modalWrap {
 	bottom: 0;
 	left: 0;
 	position: absolute;
-	-webkit-background-size: cover;
 	background-size: cover;
 	background-position: center;
-	-webkit-transition: 1.5s ease;
 	transition: 1.5s ease;
 }
 
@@ -346,28 +293,17 @@ div.modalWrap {
 
 .invisible {
 	opacity: 0;
-	-webkit-transform: translateY(5%);
-	-ms-transform: translateY(5%);
 	transform: translateY(5%);
 	z-index: -10;
 }
 
 .invisibleBg {
-	-webkit-transform: none;
-	-ms-transform: none;
 	transform: none;
 }
 
 .slideshowContain {
-	-webkit-transition: opacity 1.5s ease;
 	transition: opacity 1.5s ease;
-	-webkit-filter: sepia(0.8) brightness(0.5);
 	filter: sepia(0.8) brightness(0.5);
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
 }
 
 .landing h1 {
@@ -376,13 +312,11 @@ div.modalWrap {
 	color: #EFE4C2;
   text-shadow: 3px 3px 0 rgba(0, 0, 0, 1);
 	font-family: 'Amatic SC', cursive;
-	-webkit-transition: opacity 1.5s ease;
 	transition: opacity 1.5s ease;
 	letter-spacing: 0.4rem;
 }
 
 .naslovDukat {
-	-webkit-transition: opacity 1.5s ease;
 	transition: opacity 1.5s ease;
 	width: 50vh;
 	height: 60vh;
@@ -405,7 +339,6 @@ div.modalWrap {
   background-image: url('images/appleArt.png');
   background-position: bottom left;
   background-repeat: no-repeat;
-  -webkit-background-size: 50vw;
   background-size: 50vw;
 	color: #634545;
 }
@@ -422,7 +355,6 @@ div.modalWrap {
 	opacity: 1;
   padding: 0;
 	color: #EFE4C2;
-	-webkit-box-shadow: 0 0 250px 250px rgba(0, 0, 0, 0.3);
 	box-shadow: 0 0 250px 250px rgba(0, 0, 0, 0.3);
 	text-shadow: 0 0 5px rgba(0, 0, 0, 1);
 	border-radius: 50%;
@@ -447,7 +379,6 @@ div.modalWrap {
 
 .sectionOnama {
   color: #333;
-	-webkit-box-shadow: inset 0 0 10px 10px rgba(0, 0, 0, 0.3);
 	box-shadow: inset 0 0 10px 10px rgba(0, 0, 0, 0.3);
 	z-index: 0;
 	overflow: hidden;
@@ -458,7 +389,6 @@ div.modalWrap {
 	height: 100%;
 	position: absolute;
 	background-image: url("images/kofi.jpg");
-	-webkit-background-size: cover;
 	background-size: cover;
 	background-position: center;
 	overflow: hidden;
@@ -480,12 +410,8 @@ div.modalWrap {
 	height: 10rem;
 	background-image: url("images/chefHat.png");
 	background-repeat: no-repeat;
-	-webkit-background-size: contain;
 	background-size: contain;
-	-webkit-transform: translateY(-10rem);
-	-ms-transform: translateY(-10rem);
 	transform: translateY(-10rem);
-	-webkit-filter: sepia(1);
 	filter: sepia(1);
 }
 
@@ -493,17 +419,8 @@ div.modalWrap {
   background-color: #803e3e;
 	width: 100vw;
   height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 	/*margin-bottom: 400px;*/
 }
@@ -513,17 +430,8 @@ div.modalWrap {
 }
 
  .sectionMeni {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
   height: 500rem;
   max-height: 500rem;
@@ -532,7 +440,6 @@ div.modalWrap {
 
 .jelovnikWrap {
 	background-color: #EFE4C2;
-	background-image: url(images/t1.png);
 	padding: 0;
 	max-width: 67.5rem;
   position: relative;
@@ -540,7 +447,6 @@ div.modalWrap {
 }
 
 .jelovnikWrap h1, .jelovnikWrap h2, .jelovnikWrap p {
-  -ms-transform:scale(1,1.2);
   transform:scale(1,1.2);
   -webkit-transform:scale(1,1.2);
 	font-weight: lighter;
@@ -550,7 +456,6 @@ div.modalWrap {
 .jelovnikWrap h2, .jelovnikWrap p {
   text-align: left;
 	padding-left: 15.5rem;
-	-ms-transform:scale(1,1);
 	transform:scale(1,1);
 	-webkit-transform:scale(1,1);
 }
@@ -582,17 +487,8 @@ div.modalWrap {
 
 .sectionMeni-wrapper{
   position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
   margin: auto;
   width: 70%;
@@ -613,13 +509,11 @@ div.modalWrap {
   background-image: url(images/lineMain.jpg);
   background-repeat: repeat-y;
   z-index: 1;
-	-webkit-box-shadow: inset 0 0 17px 0.0625rem rgba(0, 0, 0, 0.2);
 	box-shadow: inset 0 0 17px 0.0625rem rgba(0, 0, 0, 0.2);
 }
 
 .sectionFooter {
   background-image: url("images/viski.jpg");
-  -webkit-background-size: cover;
   background-size: cover;
 	background-position: 0 90%;
 	height: 27rem;
@@ -728,8 +622,6 @@ div.modalWrap {
 	}
 
 	.chefHatBg {
-		-webkit-transform: translateY(-15rem);
-		-ms-transform: translateY(-15rem);
 		transform: translateY(-15rem);
 	}
 

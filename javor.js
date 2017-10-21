@@ -107,7 +107,7 @@ let menuBtn = document.getElementsByClassName("menuIcon")[0];
 let jelovnikTop = getCoords(document.getElementsByClassName("sectionJelovnik")[0]).top;
 
 function menuColor() {
-  if (top > kontaktTop && top < oNamaTop || window.innerWidth < 830 && top > jelovnikTop) {
+  if (top > kontaktTop && top < oNamaTop || window.innerWidth < 1000 && top > jelovnikTop) {
     menuBtn.style.fill = "#634545"
     console.log("eto");
   }
